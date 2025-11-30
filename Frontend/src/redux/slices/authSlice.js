@@ -15,6 +15,7 @@ const authSlice = createSlice({
       const userData = {
         name: action.payload.name,
         email: action.payload.email,
+        role: action.payload.role,
         _id: action.payload._id,  // ✅ include user ID
         token: action.payload.token,
       };

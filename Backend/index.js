@@ -11,6 +11,7 @@ const CartRouter = require("./Routes/CartRoutes");
 const PaymentRoutes = require("./Routes/PaymentRoutes");
 const OrderRoutes= require("./Routes/OrderRoutes")
 const reviewRoutes= require("./Routes/reviewRoutes")
+const ProductRoutes= require("./Routes/ProductRoutes")
 
 // ✅ Connect to database (now has access to .env vars)
 require("./Models/db");
@@ -34,6 +35,7 @@ app.use("/cart", CartRouter);
 app.use("/payment", PaymentRoutes);
 app.use("/orders",OrderRoutes);
 app.use("/reviews", reviewRoutes);
+app.use("/products",ProductRoutes);
 
 // ✅ Start the server
 app.listen(PORT, () => {

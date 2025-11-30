@@ -6,6 +6,7 @@ const Signup = () => {
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    const [role,setRole]=useState("customer")
     const navigate= useNavigate();
 
     const handleSignup= async (e)=>{
@@ -27,6 +28,7 @@ const Signup = () => {
                     name,
                     email,
                     password,
+                    role,
                 }),
             });
             if (!response.ok) {
@@ -81,6 +83,21 @@ const Signup = () => {
                 name="password"
                 placeholder="Enter your Password" />
         </div>
+
+        <div>
+            <label htmlFor="role">Select Role</label>
+            <select
+              className="mb-4 w-full px-3 py-2 border border-gray-300 rounded-md"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            >
+              <option value="customer">Customer</option>
+              <option value="delivery">Delivery Partner</option>
+              {/* Admin intentionally hidden (only DB allowed) */}
+            </select>
+          </div>
+
+        
         <div className="flex flex-col items-center">
             <button
                 type="submit"

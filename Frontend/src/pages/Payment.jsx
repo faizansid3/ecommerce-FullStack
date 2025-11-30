@@ -5,7 +5,7 @@ import CheckoutForm from "../components/CheckOutForm";
 
 // ✅ Load your publishable key
 
-const stripePromise = loadStripe(process.env.STRIPE_URL);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_URL);
 
 const Payment = () => {
   const location= useLocation();
